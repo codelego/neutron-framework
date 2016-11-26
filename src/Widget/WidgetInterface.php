@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Widget;
+namespace Phpfox\Framework\Widget;
 
 /**
  * Interface WidgetInterface
  *
- * @package Phpfox\Kernel\Widget
+ * @package Phpfox\Framework\Widget
  */
 interface WidgetInterface
 {

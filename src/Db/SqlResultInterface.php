@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Db;
+namespace Phpfox\Framework\Db;
 
 /**
  * Interface QueryResult
  *
- * @package Phpfox\Kernel\Db
+ * @package Phpfox\Framework\Db
  */
 interface SqlResultInterface
 {

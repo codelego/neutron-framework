@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\View;
+namespace Phpfox\Framework\View;
 
 
 class ViewLoaderException extends ViewException

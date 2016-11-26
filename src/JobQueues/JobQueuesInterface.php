@@ -1,10 +1,10 @@
 <?php
-namespace Phpfox\Kernel\JobQueues;
+namespace Phpfox\Framework\JobQueues;
 
 /**
  * Interface QueuesServiceInterface
  *
- * @package Phpfox\Kernel\JobQueues
+ * @package Phpfox\Framework\JobQueues
  */
 interface JobQueuesInterface
 {

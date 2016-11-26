@@ -1,5 +1,5 @@
 <?php
-namespace Phpfox\Kernel\App;
+namespace Phpfox\Framework\App;
 
 
 class Request

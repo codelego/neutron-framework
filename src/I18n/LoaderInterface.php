@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\I18n;
+namespace Phpfox\Framework\I18n;
 
 
 interface LoaderInterface

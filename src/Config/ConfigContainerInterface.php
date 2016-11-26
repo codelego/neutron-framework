@@ -1,5 +1,5 @@
 <?php
-namespace Phpfox\Kernel\Config;
+namespace Phpfox\Framework\Config;
 
 interface ConfigContainerInterface
 {

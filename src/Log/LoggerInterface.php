@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Log;
+namespace Phpfox\Framework\Log;
 
 /**
  * Interface LoggerInterface
  *
- * @package Phpfox\Kernel\Log
+ * @package Phpfox\Framework\Log
  */
 interface LoggerInterface
 {

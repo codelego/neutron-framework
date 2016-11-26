@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Form;
+namespace Phpfox\Framework\Form;
 
 /**
  * Class Select
  *
- * @package Phpfox\Kernel\Form
+ * @package Phpfox\Framework\Form
  */
 class Select extends Element implements FieldInterface
 {

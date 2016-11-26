@@ -1,5 +1,5 @@
 <?php
-namespace Phpfox\Kernel\Auth;
+namespace Phpfox\Framework\Auth;
 
 interface AuthServiceInterface
 {

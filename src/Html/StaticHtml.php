@@ -1,12 +1,12 @@
 <?php
 
-namespace Phpfox\Kernel\Html;
+namespace Phpfox\Framework\Html;
 
 
 /**
  * Class StaticHtml
  *
- * @package Phpfox\Kernel\Html
+ * @package Phpfox\Framework\Html
  */
 class StaticHtml implements HtmlElementInterface
 {

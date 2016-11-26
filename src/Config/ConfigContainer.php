@@ -1,8 +1,8 @@
 <?php
 
-namespace Phpfox\Kernel\Config;
+namespace Phpfox\Framework\Config;
 
-use Phpfox\Kernel\Db\SqlResultInterface;
+use Phpfox\Framework\Db\SqlResultInterface;
 
 class ConfigContainer implements ConfigContainerInterface
 {

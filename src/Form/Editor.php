@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Form;
+namespace Phpfox\Framework\Form;
 
 /**
  * Class Editor
  *
- * @package Phpfox\Kernel\Form
+ * @package Phpfox\Framework\Form
  */
 class Editor extends Element implements ElementInterface
 {

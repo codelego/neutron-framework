@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Session;
+namespace Phpfox\Framework\Session;
 
 
 class SessionManagerFactory

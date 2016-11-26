@@ -1,5 +1,5 @@
 <?php
-namespace Phpfox\Kernel\JobQueues;
+namespace Phpfox\Framework\JobQueues;
 
 interface JobWorkerInterface
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Db;
+namespace Phpfox\Framework\Db;
 
 /**
  * Class SqlDelete
  *
- * @package Phpfox\Kernel\Db
+ * @package Phpfox\Framework\Db
  */
 class SqlDelete
 {

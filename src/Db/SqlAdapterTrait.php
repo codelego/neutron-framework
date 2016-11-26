@@ -1,5 +1,5 @@
 <?php
-namespace Phpfox\Kernel\Db;
+namespace Phpfox\Framework\Db;
 
 
 Trait SqlAdapterTrait

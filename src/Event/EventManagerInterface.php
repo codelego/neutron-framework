@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Event;
+namespace Phpfox\Framework\Event;
 
 /**
  * Interface EventManagerInterface
  *
- * @package Phpfox\Kernel\Event
+ * @package Phpfox\Framework\Event
  */
 interface EventManagerInterface
 {

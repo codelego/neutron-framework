@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Form;
+namespace Phpfox\Framework\Form;
 
 /**
  * Class Dummy
  *
- * @package Phpfox\Kernel\Form
+ * @package Phpfox\Framework\Form
  */
 class Dummy extends Element implements FieldInterface
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Phpfox\Kernel\Db;
+namespace Phpfox\Framework\Db;
 
 
-use Phpfox\Kernel\Model\GatewayException;
-use Phpfox\Kernel\Model\GatewayInterface;
+use Phpfox\Framework\Model\GatewayException;
+use Phpfox\Framework\Model\GatewayInterface;
 
 class DbTableGateway implements GatewayInterface
 {

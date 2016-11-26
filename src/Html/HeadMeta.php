@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Html;
+namespace Phpfox\Framework\Html;
 
 /**
  * Class HeadMeta
  *
- * @package Phpfox\Kernel\Html
+ * @package Phpfox\Framework\Html
  */
 class HeadMeta implements HtmlElementInterface
 {

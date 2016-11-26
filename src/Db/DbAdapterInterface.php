@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Db;
+namespace Phpfox\Framework\Db;
 
 interface DbAdapterInterface
 {

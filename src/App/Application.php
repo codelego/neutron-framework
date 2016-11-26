@@ -1,10 +1,10 @@
 <?php
 
-namespace Phpfox\Kernel\App;
+namespace Phpfox\Framework\App;
 
-use Phpfox\Kernel\Controller\ControllerInterface;
-use Phpfox\Kernel\Router\RouteManagerInterface;
-use Phpfox\Kernel\View\ViewModel;
+use Phpfox\Framework\Controller\ControllerInterface;
+use Phpfox\Framework\Router\RouteManagerInterface;
+use Phpfox\Framework\View\ViewModel;
 
 class Application
 {

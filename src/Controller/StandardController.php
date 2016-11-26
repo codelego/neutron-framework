@@ -1,12 +1,12 @@
 <?php
 
-namespace Phpfox\Kernel\Controller;
+namespace Phpfox\Framework\Controller;
 
 
 /**
  * Class StandardController
  *
- * @package Phpfox\Kernel\Mvc
+ * @package Phpfox\Framework\Mvc
  */
 class StandardController implements ControllerInterface
 {

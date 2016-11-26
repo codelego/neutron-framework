@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\JobQueues;
+namespace Phpfox\Framework\JobQueues;
 
 /**
  * Class Worker
  *
- * @package Phpfox\Kernel\JobQueues
+ * @package Phpfox\Framework\JobQueues
  */
 class JobWorker implements JobWorkerInterface
 {

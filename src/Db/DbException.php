@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Phpfox\Kernel\Db;
+namespace Phpfox\Framework\Db;
 
 /**
  * Class DbException
  *
- * @package Phpfox\Kernel\Db
+ * @package Phpfox\Framework\Db
  */
 class DbException extends \RuntimeException
 {

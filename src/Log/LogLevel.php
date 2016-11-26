@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Log;
+namespace Phpfox\Framework\Log;
 
 /**
  * Describe log levels
@@ -17,7 +17,7 @@ namespace Phpfox\Kernel\Log;
  * - info: 7
  * - debug: 8
  *
- * @package Phpfox\Kernel\Log
+ * @package Phpfox\Framework\Log
  */
 final class LogLevel
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Mail;
+namespace Phpfox\Framework\Mail;
 
 
 class PhpMailerTransport implements TransportInterface

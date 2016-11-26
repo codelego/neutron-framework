@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Router;
+namespace Phpfox\Framework\Router;
 
 
 class ProfileNameFilter implements FilterInterface

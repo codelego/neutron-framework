@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Html;
+namespace Phpfox\Framework\Html;
 
 /**
  * Class RequireJs
  *
- * @package Phpfox\Kernel\RequireJs
+ * @package Phpfox\Framework\RequireJs
  */
 class RequireJs
 {

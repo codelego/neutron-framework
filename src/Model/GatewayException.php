@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Model;
+namespace Phpfox\Framework\Model;
 
 class GatewayException extends \Exception
 {

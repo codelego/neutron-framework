@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\JobQueues;
+namespace Phpfox\Framework\JobQueues;
 
 /**
  * Class JobHandlerTrait
  *
- * @package Phpfox\Kernel\JobQueues
+ * @package Phpfox\Framework\JobQueues
  */
 trait JobHandlerTrait
 {

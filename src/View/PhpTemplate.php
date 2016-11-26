@@ -1,12 +1,12 @@
 <?php
 
-namespace Phpfox\Kernel\View;
+namespace Phpfox\Framework\View;
 
 
 /**
  * Class PhpTemplate
  *
- * @package Phpfox\Kernel\View
+ * @package Phpfox\Framework\View
  */
 class PhpTemplate implements ViewRenderInterface
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Html;
+namespace Phpfox\Framework\Html;
 
 /**
  * Class InlineStyle
  *
- * @package Phpfox\Kernel\Html
+ * @package Phpfox\Framework\Html
  */
 class InlineStyle implements HtmlElementInterface
 {

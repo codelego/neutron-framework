@@ -1,8 +1,8 @@
 <?php
 
-namespace Phpfox\Kernel\App;
+namespace Phpfox\Framework\App;
 
-use Phpfox\Kernel\View\ViewModel;
+use Phpfox\Framework\View\ViewModel;
 
 class Response
 {

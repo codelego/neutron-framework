@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Cache;
+namespace Phpfox\Framework\Cache;
 
 
 interface CacheException

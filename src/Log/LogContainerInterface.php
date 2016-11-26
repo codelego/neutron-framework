@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Log;
+namespace Phpfox\Framework\Log;
 
 
 class LogContainerInterface

@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Widget;
+namespace Phpfox\Framework\Widget;
 
 /**
  * Class StandardWidget
  *
- * @package Phpfox\Kernel\Widget
+ * @package Phpfox\Framework\Widget
  */
 class StandardWidget implements WidgetInterface
 {

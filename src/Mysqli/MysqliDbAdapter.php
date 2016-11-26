@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Mysqli;
+namespace Phpfox\Framework\Mysqli;
 
-use Phpfox\Kernel\Db\DbAdapterInterface;
-use Phpfox\Kernel\Db\DbConnectException;
-use Phpfox\Kernel\Db\SqlAdapterTrait;
-use Phpfox\Kernel\Db\SqlException;
+use Phpfox\Framework\Db\DbAdapterInterface;
+use Phpfox\Framework\Db\DbConnectException;
+use Phpfox\Framework\Db\SqlAdapterTrait;
+use Phpfox\Framework\Db\SqlException;
 
 class MysqliDbAdapter implements DbAdapterInterface
 {

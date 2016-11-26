@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Html;
+namespace Phpfox\Framework\Html;
 
 /**
  * Class HtmlHeader
  *
- * @package Phpfox\Kernel\Html
+ * @package Phpfox\Framework\Html
  */
 class HtmlHeader extends HtmlElementContainer
 {

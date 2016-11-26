@@ -1,10 +1,10 @@
 <?php
-namespace Phpfox\Kernel\Router;
+namespace Phpfox\Framework\Router;
 
 /**
  * Class RouteResult
  *
- * @package Phpfox\Kernel\Router
+ * @package Phpfox\Framework\Router
  */
 class RouteResult
 {

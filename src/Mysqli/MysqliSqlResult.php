@@ -1,13 +1,13 @@
 <?php
 
-namespace Phpfox\Kernel\Mysqli;
+namespace Phpfox\Framework\Mysqli;
 
-use Phpfox\Kernel\Db\SqlResultInterface;
+use Phpfox\Framework\Db\SqlResultInterface;
 
 /**
  * Class MysqliSqlResult
  *
- * @package Phpfox\Kernel\Mysqli
+ * @package Phpfox\Framework\Mysqli
  */
 class MysqliSqlResult implements SqlResultInterface
 {

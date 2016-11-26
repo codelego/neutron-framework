@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\I18n;
+namespace Phpfox\Framework\I18n;
 
 /**
  * Class TextDomain
  *
- * @package Phpfox\Kernel\I18n
+ * @package Phpfox\Framework\I18n
  */
 class TextDomain implements TextDomainInterface
 {

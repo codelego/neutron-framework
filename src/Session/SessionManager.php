@@ -1,11 +1,11 @@
 <?php
-namespace Phpfox\Kernel\Session;
+namespace Phpfox\Framework\Session;
 
 
 /**
  * Class SessionManager
  *
- * @package Phpfox\Kernel\Session
+ * @package Phpfox\Framework\Session
  */
 class SessionManager
 {

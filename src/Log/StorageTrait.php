@@ -1,12 +1,12 @@
 <?php
 
-namespace Phpfox\Kernel\Log;
+namespace Phpfox\Framework\Log;
 
 
 /**
  * Class LoggerTrait
  *
- * @package Phpfox\Kernel\Log
+ * @package Phpfox\Framework\Log
  */
 trait StorageTrait
 {

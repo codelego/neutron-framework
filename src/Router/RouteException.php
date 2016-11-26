@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Router;
+namespace Phpfox\Framework\Router;
 
 class RouteException extends \InvalidArgumentException
 {

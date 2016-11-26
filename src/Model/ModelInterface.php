@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Model;
+namespace Phpfox\Framework\Model;
 
 /**
  * Interface ModelInterface
  *
- * @package Phpfox\Kernel\Model
+ * @package Phpfox\Framework\Model
  */
 interface ModelInterface
 {

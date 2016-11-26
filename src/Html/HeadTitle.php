@@ -1,13 +1,13 @@
 <?php
 
-namespace Phpfox\Kernel\Html;
+namespace Phpfox\Framework\Html;
 
 /**
  * Class HeadTitle
  *
  * Control content of &gt;title&lt; tag.
  *
- * @package Phpfox\Kernel\Html
+ * @package Phpfox\Framework\Html
  */
 class HeadTitle implements HtmlElementInterface
 {

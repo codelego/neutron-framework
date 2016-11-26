@@ -1,5 +1,5 @@
 <?php
-namespace Phpfox\Kernel\Model;
+namespace Phpfox\Framework\Model;
 
 interface GatewayManagerInterface
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Phpfox\Kernel\Event;
+namespace Phpfox\Framework\Event;
 
 use SplStack;
 
 /**
  * Class Response
  *
- * @package Phpfox\Kernel\Event
+ * @package Phpfox\Framework\Event
  */
 class Response extends SplStack
 {

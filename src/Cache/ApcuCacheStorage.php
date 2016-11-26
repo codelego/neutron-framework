@@ -1,5 +1,5 @@
 <?php
-namespace Phpfox\Kernel\Cache;
+namespace Phpfox\Framework\Cache;
 
 
 class ApcuCacheStorage implements CacheStorageInterface

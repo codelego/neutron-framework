@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\View;
+namespace Phpfox\Framework\View;
 
 /**
  * Class ViewLayout
  *
- * @package Phpfox\Kernel\View
+ * @package Phpfox\Framework\View
  */
 class ViewLayout extends ViewModel
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Router;
+namespace Phpfox\Framework\Router;
 
 /**
  * Class NullAwareFilter
  *
- * @package Phpfox\Kernel\Router
+ * @package Phpfox\Framework\Router
  */
 class NullAwareFilter implements FilterInterface
 {

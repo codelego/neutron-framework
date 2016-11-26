@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Validator;
+namespace Phpfox\Framework\Validator;
 
 /**
  * Interface ValidateContainerFactoryInterface
  *
- * @package Phpfox\Kernel\Validator
+ * @package Phpfox\Framework\Validator
  */
 interface ValidateContainerFactoryInterface
 {

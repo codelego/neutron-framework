@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Auth;
+namespace Phpfox\Framework\Auth;
 
 /**
  * Interface PasswordValidatorInterface
  *
- * @package Phpfox\Kernel\Auth
+ * @package Phpfox\Framework\Auth
  */
 interface AuthPasswordInterface
 {

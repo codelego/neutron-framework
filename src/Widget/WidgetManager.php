@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Widget;
+namespace Phpfox\Framework\Widget;
 
 class WidgetManager
 {

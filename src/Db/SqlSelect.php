@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Db;
+namespace Phpfox\Framework\Db;
 
 /**
  * Class SqlSelect
  *
- * @package Phpfox\Kernel\Db
+ * @package Phpfox\Framework\Db
  */
 class SqlSelect
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Validator;
+namespace Phpfox\Framework\Validator;
 
 class ValidateContainer
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Phpfox\Kernel\Service;
+namespace Phpfox\Framework\Service;
 
 interface ServiceManagerInterface
 {

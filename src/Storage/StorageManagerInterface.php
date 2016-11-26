@@ -1,5 +1,5 @@
 <?php
-namespace Phpfox\Kernel\Storage;
+namespace Phpfox\Framework\Storage;
 
 interface StorageManagerInterface
 {

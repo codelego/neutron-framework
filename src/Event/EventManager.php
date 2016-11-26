@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Event;
+namespace Phpfox\Framework\Event;
 
 class EventManager implements EventManagerInterface
 {

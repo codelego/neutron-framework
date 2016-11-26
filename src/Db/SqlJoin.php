@@ -1,11 +1,11 @@
 <?php
 
-namespace Phpfox\Kernel\Db;
+namespace Phpfox\Framework\Db;
 
 /**
  * Class SqlJoin
  *
- * @package Phpfox\Kernel\Db
+ * @package Phpfox\Framework\Db
  */
 class SqlJoin
 {

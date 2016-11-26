@@ -1,12 +1,12 @@
 <?php
 
-namespace Phpfox\Kernel\Html;
+namespace Phpfox\Framework\Html;
 
 /**
  * Class HtmlFooter
  *
  *
- * @package Phpfox\Kernel\Html
+ * @package Phpfox\Framework\Html
  *
  */
 class HtmlFooter extends HtmlElementContainer

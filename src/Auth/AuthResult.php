@@ -1,5 +1,5 @@
 <?php
-namespace Phpfox\Kernel\Auth;
+namespace Phpfox\Framework\Auth;
 
 
 /**
@@ -14,7 +14,7 @@ namespace Phpfox\Kernel\Auth;
  * - INVALID_CREDENTIAL
  * - UN_CATEGORIZE
  *
- * @package Phpfox\Kernel\AuthManger
+ * @package Phpfox\Framework\AuthManger
  */
 class AuthResult
 {

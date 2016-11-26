@@ -1,5 +1,5 @@
 <?php
-namespace Phpfox\Kernel\Controller;
+namespace Phpfox\Framework\Controller;
 
 interface ControllerInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Service;
+namespace Phpfox\Framework\Service;
 
 
 class ServiceManager implements ServiceManagerInterface

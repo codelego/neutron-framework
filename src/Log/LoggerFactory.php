@@ -1,10 +1,10 @@
 <?php
-namespace Phpfox\Kernel\Log;
+namespace Phpfox\Framework\Log;
 
 /**
  * Class LoggerFactory
  *
- * @package Phpfox\Kernel\Log
+ * @package Phpfox\Framework\Log
  */
 class LoggerFactory
 {

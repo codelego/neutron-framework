@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Form;
+namespace Phpfox\Framework\Form;
 
 class Fieldset extends Element implements CollectionInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpfox\Kernel\Html;
+namespace Phpfox\Framework\Html;
 
 
 class Breadcrumb implements HtmlElementInterface
