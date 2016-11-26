@@ -12,7 +12,7 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-0": {
-      "Phpfox": "src/"
+      "Phpfox\\": ["src/"]
     }
   },
   "autoload-dev": {
