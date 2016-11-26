@@ -12,12 +12,12 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-0": {
-      "Phpfox\\": ["src/"]
+      "Phpfox\\Kernel\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-0": {
-      "Phpfox": "test/"
+      "Phpfox\\Kernel\\": "test/"
     }
   }
 }
