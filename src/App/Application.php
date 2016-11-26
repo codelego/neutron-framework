@@ -6,11 +6,6 @@ use Phpfox\Kernel\Controller\ControllerInterface;
 use Phpfox\Kernel\Router\RouteManagerInterface;
 use Phpfox\Kernel\View\ViewModel;
 
-/**
- * Class Application
- *
- * @package Phpfox\Kernel\Mvc
- */
 class Application
 {
     /**
@@ -70,7 +65,7 @@ class Application
     public function resolve($path, $host, $method, $protocol)
     {
         $loop = 5;
-        $content = null;
+        $lastResolveContent = null;
 
         /** @var RouteManagerInterface $routing */
         $routing = \service('router');
@@ -85,14 +80,17 @@ class Application
         /** @var ControllerInterface $controller */
         $controller = new $this->controller;
 
-        /** @var ViewModel $response */
-        $response = $controller->resolve($this->action);
+        $lastResolveContent = null;
 
         do {
             $this->resolved = true;
-            $content = (new $this->controller())->resolve($this->action);
+
+            /** @var ViewModel $response */
+            $lastResolveContent = $controller->resolve($this->action);
+
         } while ($this->resolved == false and --$loop > 0);
 
-        echo service('responder')->setContent($content)->response();
+
+        echo service('responder')->setContent($lastResolveContent)->response();
     }
 }
