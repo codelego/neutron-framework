@@ -1,0 +1,23 @@
+{
+  "name": "codelego/phpfox",
+  "description": "Phpfox framework.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nam Nguyen",
+      "email": "nam.ngvan@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-0": {
+      "Phpfox": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-0": {
+      "Phpfox": "test/"
+    }
+  }
+}
