@@ -39,7 +39,7 @@ interface StorageManagerInterface
      * @param string $id
      *
      * @return StorageServiceInterface
-     * @trhows InvalidArgumentException
+     * @throws StorageException
      */
     public function get($id);
 
@@ -66,7 +66,7 @@ interface StorageManagerInterface
      * @param string $name  Relative path
      *
      * @return bool
-     * @throws StorageServiceException
+     * @throws StorageException
      */
     public function putFile($id, $local, $name);
 
@@ -76,7 +76,7 @@ interface StorageManagerInterface
      * @param string $name
      *
      * @return bool
-     * @throws StorageServiceException
+     * @throws StorageException
      */
     public function getFile($id, $local, $name);
 
@@ -85,7 +85,7 @@ interface StorageManagerInterface
      * @param string $name Relative path
      *
      * @return bool
-     * @throws StorageServiceException
+     * @throws StorageException
      */
     public function deleteFile($id, $name);
 

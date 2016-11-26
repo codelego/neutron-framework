@@ -120,105 +120,33 @@ class Ssh2StorageService implements StorageServiceInterface
             . $path);
 
         if (!$content) {
-            throw new StorageServiceException(sprintf('Unable to get contents of "%s"',
+            throw new StorageException(sprintf('Unable to get contents of "%s"',
                 $path));
         }
 
         return $content;
     }
 
-    public function putObject($data, $name)
-    {
-        $path = $this->getPath($name);
-
-        $return = file_put_contents('ssh2.sftp://' . $this->getFtpStream()
-            . $path, $data);
-
-        try {
-            $this->command(sprintf('chmod -R  %o %s', 0666,
-                escapeshellarg($path)));
-        } catch (\Exception $e) {
-            // Silence
-        }
-
-        if (!$return) {
-            throw new StorageServiceException(sprintf('Unable to put contents to "%s"',
-                $path));
-        }
-
-        return true;
-    }
-
-    public function getFile($local, $name)
-    {
-        $path = $this->getPath($name);
-        $this->connect();
-
-        $return = @ssh2_scp_recv($this->sshStream, $path, $local);
-
-        // Error
-        if (!$return) {
-            throw new StorageServiceException(sprintf('Unable to get "%s" to "%s"',
-                $path, $local));
-        }
-
-        return true;
-    }
-
     /**
-     * @inheritdoc
+     * @return \resource
+     * @throws StorageException
      */
-    public function putFile($local, $name)
+    private function getFtpStream()
     {
-        $path = $this->getPath($name);
-        $directory = dirname($path);
-
-
-        $isDir = is_dir('ssh2.sftp://' . $this->getFtpStream() . $directory);
-
-        $this->connect();
-
-        if (!$isDir) {
-
-            if (!@ssh2_sftp_mkdir($this->getFtpStream(), $directory,
-                $this->directoryPermission, true)
-            ) {
-                throw new StorageServiceException(sprintf('Unable to make directory "%s"',
-                    $directory));
+        if (null === $this->ftpStream) {
+            $this->connect();
+            $this->ftpStream = @ssh2_sftp($this->sshStream);
+            if (null === $this->ftpStream) {
+                throw new StorageException('Unable to get sftp resource');
             }
         }
 
-        $return = @ssh2_scp_send($this->sshStream, $local, $path,
-            $this->filePermission);
-
-        if (!$return) {
-            throw new StorageServiceException(sprintf('Unable to put "%s" to "%s"',
-                $local, $path));
-        }
-
-        return true;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function deleteFile($name)
-    {
-        $path = $this->getPath($name);
-
-        $return = @ssh2_sftp_unlink($this->getFtpStream(), $path);
-
-        if (!$return) {
-            throw new StorageServiceException(sprintf('Unable to unlink "%s"',
-                $path));
-        }
-
-        return true;
+        return $this->ftpStream;
     }
 
     /**
      * @return \resource
-     * @throws  StorageServiceException
+     * @throws  StorageException
      */
     private function connect()
     {
@@ -246,58 +174,62 @@ class Ssh2StorageService implements StorageServiceInterface
         }
 
         if (!$this->sshStream) {
-            throw new StorageServiceException(sprintf('Unable to connect to "%s"',
+            throw new StorageException(sprintf('Unable to connect to "%s"',
                 $this->host));
         }
 
 
         // Auth using keys
         if ($publicKey && $privateKey && $hostKey) {
-            $return = @ssh2_auth_pubkey_file($this->sshStream,
-                $this->getUsername(), $publicKey, $privateKey,
-                $this->getPassword());
+            $return = @ssh2_auth_pubkey_file($this->sshStream, $this->username,
+                $publicKey, $privateKey, $this->password);
         } // Auth using username/password only
         else {
-            if ($this->getUsername() && $this->getPassword()) {
-                $return = @ssh2_auth_password($this->sshStream,
-                    $this->getUsername(), $this->getPassword());
+            if ($this->username && $this->password) {
+                $return = @ssh2_auth_password($this->sshStream, $this->username,
+                    $this->password);
             } // Auth using none
             else {
-                $return = @ssh2_auth_none($this->sshStream,
-                    $this->getUsername());
+                $return = @ssh2_auth_none($this->sshStream, $this->username);
             }
         }
 
         // Failure
         if (!$return) {
-            throw new StorageServiceException('Login failed.');
+            throw new StorageException('Login failed.');
         }
 
 
         return $this->sshStream;
     }
 
-    public function disconnect()
+    public function putObject($data, $name)
     {
-        if (null !== $this->sshStream) {
-            $this->command('exit');
-            $this->sshStream = null;
-        }
-    }
+        $path = $this->getPath($name);
 
-    /**
-     * @throws StorageServiceException
-     */
-    public function onDisconnect()
-    {
-        throw new StorageServiceException('Disconnected from server');
+        $return = file_put_contents('ssh2.sftp://' . $this->getFtpStream()
+            . $path, $data);
+
+        try {
+            $this->command(sprintf('chmod -R  %o %s', 0666,
+                escapeshellarg($path)));
+        } catch (\Exception $e) {
+            // Silence
+        }
+
+        if (!$return) {
+            throw new StorageException(sprintf('Unable to put contents to "%s"',
+                $path));
+        }
+
+        return true;
     }
 
     /**
      * @param $command
      *
      * @return string
-     * @throws StorageServiceException
+     * @throws StorageException
      */
     private function command($command)
     {
@@ -306,7 +238,7 @@ class Ssh2StorageService implements StorageServiceInterface
         $stream = @ssh2_exec($this->sshStream, $command);
 
         if (!$stream) {
-            throw new StorageServiceException(sprintf('Unable to execute command "%s"',
+            throw new StorageException(sprintf('Unable to execute command "%s"',
                 $command));
         }
         $errorStream = @ssh2_fetch_stream($stream, SSH2_STREAM_STDERR);
@@ -331,26 +263,91 @@ class Ssh2StorageService implements StorageServiceInterface
         return trim($data);
     }
 
-    /**
-     * @return \resource
-     * @throws StorageServiceException
-     */
-    private function getFtpStream()
+    public function getFile($local, $name)
     {
-        if (null === $this->ftpStream) {
-            $this->connect();
-            $this->ftpStream = @ssh2_sftp($this->sshStream);
-            if (null === $this->ftpStream) {
-                throw new StorageServiceException('Unable to get sftp resource');
+        $path = $this->getPath($name);
+        $this->connect();
+
+        $return = @ssh2_scp_recv($this->sshStream, $path, $local);
+
+        // Error
+        if (!$return) {
+            throw new StorageException(sprintf('Unable to get "%s" to "%s"',
+                $path, $local));
+        }
+
+        return true;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function putFile($local, $name)
+    {
+        $path = $this->getPath($name);
+        $directory = dirname($path);
+
+
+        $isDir = is_dir('ssh2.sftp://' . $this->getFtpStream() . $directory);
+
+        $this->connect();
+
+        if (!$isDir) {
+
+            if (!@ssh2_sftp_mkdir($this->getFtpStream(), $directory,
+                $this->directoryPermission, true)
+            ) {
+                throw new StorageException(sprintf('Unable to make directory "%s"',
+                    $directory));
             }
         }
 
-        return $this->ftpStream;
+        $return = @ssh2_scp_send($this->sshStream, $local, $path,
+            $this->filePermission);
+
+        if (!$return) {
+            throw new StorageException(sprintf('Unable to put "%s" to "%s"',
+                $local, $path));
+        }
+
+        return true;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function deleteFile($name)
+    {
+        $path = $this->getPath($name);
+
+        $return = @ssh2_sftp_unlink($this->getFtpStream(), $path);
+
+        if (!$return) {
+            throw new StorageException(sprintf('Unable to unlink "%s"', $path));
+        }
+
+        return true;
+    }
+
+    /**
+     * @throws StorageException
+     */
+    public function onDisconnect()
+    {
+        throw new StorageException('Disconnected from server');
     }
 
     public function __destruct()
     {
         $this->disconnect();
+    }
+
+    public function disconnect()
+    {
+        if (null !== $this->sshStream) {
+            $this->command('exit');
+            $this->sshStream = null;
+        }
     }
 
     public function __sleep()

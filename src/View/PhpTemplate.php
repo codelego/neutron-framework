@@ -29,6 +29,7 @@ class PhpTemplate implements ViewRenderInterface
 
         unset($__vars_);
 
+        /** @noinspection PhpIncludeInspection */
         include $__template_;
 
         return ob_get_clean();

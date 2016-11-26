@@ -21,7 +21,7 @@ class StorageManager implements StorageManagerInterface
     protected $default;
 
     /**
-     * @var StorageServiceFactoryInterface
+     * @var mixed
      */
     protected $factory;
 
@@ -30,23 +30,13 @@ class StorageManager implements StorageManagerInterface
      *
      * @param array $configs
      *
-     * @throws StorageServiceException
+     * @throws StorageException
      */
     public function __construct($configs)
     {
         $this->map = $configs['map'];
         $this->factory = $configs['factory'];
         $this->default = $configs['default'];
-    }
-
-    public function get($id)
-    {
-        if (!$id) {
-            $id = $this->default;
-        }
-
-        return $this->vars[$id] ? $this->vars[$id]
-            : $this->vars[$id] = $this->factory->factory($this->map[$id]);
     }
 
     public function set($id, StorageServiceInterface $service)
@@ -63,6 +53,16 @@ class StorageManager implements StorageManagerInterface
     public function getUrl($id, $name)
     {
         return $this->get($id)->getUrl($name);
+    }
+
+    public function get($id)
+    {
+        if (!$id) {
+            $id = $this->default;
+        }
+
+        return $this->vars[$id] ? $this->vars[$id]
+            : $this->vars[$id] = $this->factory->factory($this->map[$id]);
     }
 
     public function cdnUrl($id, $name)

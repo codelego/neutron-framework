@@ -2,18 +2,12 @@
 
 namespace Phpfox\Kernel\Event;
 
-    /**
-     * Class EventManager
-     *
-     * @package Phpfox\Kernel\Event
-     */
-/**
- * Class EventManager
- *
- * @package Phpfox\Kernel\Event
- */
 class EventManager implements EventManagerInterface
 {
+    /**
+     * @var EventManager
+     */
+    private static $singleton;
     /**
      *
      * Subscribed events and their listeners
@@ -26,16 +20,6 @@ class EventManager implements EventManagerInterface
      */
     protected $events = [];
 
-    /**
-     * @var EventManager
-     */
-    private static $singleton;
-
-    public function reset()
-    {
-        $this->events = config('events');
-    }
-
     public static function instance()
     {
         if (null == self::$singleton) {
@@ -44,6 +28,11 @@ class EventManager implements EventManagerInterface
         }
         return self::$singleton;
 
+    }
+
+    public function reset()
+    {
+        $this->events = config('events');
     }
 
     public function trigger($event, $target = null, $params = [])

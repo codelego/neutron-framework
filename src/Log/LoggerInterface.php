@@ -5,8 +5,6 @@ namespace Phpfox\Kernel\Log;
 /**
  * Interface LoggerInterface
  *
- * http://www.php-fig.org/psr/psr-3/#3-psr-log-loggerinterface
- *
  * @package Phpfox\Kernel\Log
  */
 interface LoggerInterface

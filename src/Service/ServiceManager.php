@@ -3,12 +3,7 @@
 namespace Phpfox\Kernel\Service;
 
 
-/**
- * Class ServiceManager
- *
- * @package Phpfox\Kernel\Service
- */
-class ServiceManager
+class ServiceManager implements ServiceManagerInterface
 {
     /**
      * @var ServiceManager
@@ -24,7 +19,7 @@ class ServiceManager
     protected $container = [];
 
     /**
-     * @return ServiceManager|static
+     * @return ServiceManager
      */
     public static function instance()
     {
@@ -107,20 +102,6 @@ class ServiceManager
         }
 
         return (new \ReflectionClass($class))->newInstanceArgs($ref);
-    }
-
-    /**
-     * @param string $id
-     *
-     * @return $this
-     */
-    public function delete($id)
-    {
-        if (isset($this->container[$id])) {
-            unset($this->container[$id]);
-        }
-
-        return $this;
     }
 
     /**

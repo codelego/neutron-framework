@@ -2,12 +2,6 @@
 
 namespace Phpfox\Kernel\Cache;
 
-/**
- * Do not create instance of CacheItemInterface directly, it should be usage
- * as result of CacheStorageInterface getItem.
- *
- * @package Phpfox\Kernel\Cache
- */
 interface CacheItemInterface
 {
     /**

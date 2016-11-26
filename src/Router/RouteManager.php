@@ -2,12 +2,7 @@
 
 namespace Phpfox\Kernel\Router;
 
-/**
- * Class RouteManager
- *
- * @package Phpfox\Kernel\Router
- */
-class RouteManager
+class RouteManager implements RouteManagerInterface
 {
     /**
      * router by name

@@ -2,13 +2,6 @@
 
 namespace Phpfox\Kernel\Cache;
 
-/**
- * Class ApcCacheStorage
- *
- * Require apc extension
- *
- * @package Phpfox\Kernel\Cache
- */
 class ApcCacheStorage implements CacheStorageInterface
 {
 
@@ -56,13 +49,13 @@ class ApcCacheStorage implements CacheStorageInterface
         return true;
     }
 
-    public function save(CacheItemInterface $item)
-    {
-        apc_store($item->key(), $item->get(), $item->ttl());
-    }
-
     public function setItem($key, $value, $ttl = 0)
     {
         $this->save(new CacheItem($key, $value, $ttl));
+    }
+
+    public function save(CacheItemInterface $item)
+    {
+        apc_store($item->key(), $item->get(), $item->ttl());
     }
 }

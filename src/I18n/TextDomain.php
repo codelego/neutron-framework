@@ -9,10 +9,6 @@ namespace Phpfox\Kernel\I18n;
  */
 class TextDomain implements TextDomainInterface
 {
-    /**
-     * @var PluralRule
-     */
-    protected $pluralRule;
 
     /**
      * @var string
@@ -20,15 +16,28 @@ class TextDomain implements TextDomainInterface
     protected $messages = [];
 
     /**
-     * @inheritdoc
+     * @var string
      */
-    public function textPlural($domain, $message, $number = 0)
+    protected $locale;
+
+    /**
+     * @var string
+     */
+    protected $domain;
+
+
+    public function textPlural($id, $number = 0)
+    {
+        return isset($this->messages[$id]) ? $this->messages : $id;
+    }
+
+    public function text($id)
     {
 
     }
 
-    public function text($domain, $message)
+    function __sleep()
     {
-
+        return ['messages', 'locale', 'domain'];
     }
 }

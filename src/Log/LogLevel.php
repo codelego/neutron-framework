@@ -5,8 +5,6 @@ namespace Phpfox\Kernel\Log;
 /**
  * Describe log levels
  *
- * http://www.php-fig.org/psr/psr-3/#5-psr-log-loglevel
- *
  * Define log level
  * emergency, alert, critical, error, warning, notice, info, debug
  * code number:

@@ -2,11 +2,6 @@
 
 namespace Phpfox\Kernel\Cache;
 
-/**
- * Interface CacheStorageInterface
- *
- * @package Phpfox\Kernel\Cache
- */
 interface CacheStorageInterface
 {
     /**

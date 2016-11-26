@@ -5,20 +5,19 @@ namespace Phpfox\Kernel\I18n;
 
 interface TextDomainInterface
 {
+
     /**
-     * @param string $domain
-     * @param string $message
+     * @param string $id
      * @param int    $number
      *
      * @return string
      */
-    public function textPlural($domain, $message, $number = 0);
+    public function textPlural($id, $number = 0);
 
     /**
-     * @param string $domain
-     * @param string $message
+     * @param string $id
      *
      * @return mixed
      */
-    public function text($domain, $message);
+    public function text($id);
 }

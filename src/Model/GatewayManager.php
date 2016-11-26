@@ -3,11 +3,6 @@
 namespace Phpfox\Kernel\Model;
 
 
-/**
- * Class GatewayManager
- *
- * @package Phpfox\Kernel\Model
- */
 class GatewayManager implements GatewayManagerInterface
 {
     /**

@@ -147,7 +147,6 @@ class RequireJs
 
     /**
      * @param string $name If empty,it's generate a unique string use php
-     *                     uniqid().
      * @param string $code
      *
      * @return $this
@@ -273,8 +272,8 @@ class RequireJs
     public function render()
     {
         return '<script type="text/javascript">' . PHP_EOL
-        . $this->renderConfig() . ' ; ' . PHP_EOL . $this->renderScript()
-        . PHP_EOL . '</script>';
+            . $this->renderConfig() . ' ; ' . PHP_EOL . $this->renderScript()
+            . PHP_EOL . '</script>';
     }
 
     /**
@@ -282,7 +281,7 @@ class RequireJs
      */
     public function renderConfig()
     {
-        \app()->emit('onBeforeJavascriptRender', $this);
+        events()->trigger('onBeforeJavascriptRender');
 
         $config = [
             'baseUrl' => $this->getBaseUrl(),
@@ -293,7 +292,7 @@ class RequireJs
         ];
 
         return 'requirejs.config(' . json_encode($config, JSON_PRETTY_PRINT)
-        . ');';
+            . ');';
     }
 
     /**
@@ -369,7 +368,7 @@ class RequireJs
         $dependency = json_encode($this->getDependency(), JSON_PRETTY_PRINT);
 
         return 'require(' . $dependency . ', function(){' . PHP_EOL . $content
-        . PHP_EOL . ' });';
+            . PHP_EOL . ' });';
     }
 
     /**
@@ -398,13 +397,13 @@ class RequireJs
     public function renderScriptHtml()
     {
         return '<script type="text/javascript">' . PHP_EOL
-        . $this->renderScript() . PHP_EOL . '</script>';
+            . $this->renderScript() . PHP_EOL . '</script>';
     }
 
     public function renderConfigHtml()
     {
         return '<script type="text/javascript">' . PHP_EOL
-        . $this->renderConfig() . PHP_EOL . '</script>';
+            . $this->renderConfig() . PHP_EOL . '</script>';
     }
 
     /**

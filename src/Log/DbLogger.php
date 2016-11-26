@@ -5,7 +5,7 @@ namespace Phpfox\Kernel\Log;
 
 class DbLogger implements LoggerInterface
 {
-    use LoggerTrait;
+    use StorageTrait;
 
     /**
      * @var string

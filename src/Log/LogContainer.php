@@ -2,12 +2,7 @@
 
 namespace Phpfox\Kernel\Log;
 
-/**
- * Class LogContainer
- *
- * @package Phpfox\Kernel\Log
- */
-class LogContainer implements LogContainerInterface
+class LogContainer
 {
     /**
      * @var LoggerInterface[]

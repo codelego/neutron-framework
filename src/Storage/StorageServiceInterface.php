@@ -29,7 +29,7 @@ interface StorageServiceInterface
      * @param  string $name
      *
      * @return mixed
-     * @throws StorageServiceException
+     * @throws StorageException
      */
     public function getObject($name);
 
@@ -38,7 +38,7 @@ interface StorageServiceInterface
      * @param $name
      *
      * @return bool
-     * @throws StorageServiceException
+     * @throws StorageException
      */
     public function putObject($data, $name);
 
@@ -56,7 +56,7 @@ interface StorageServiceInterface
      * @param string $name  Relative path
      *
      * @return bool
-     * @throws StorageServiceException
+     * @throws StorageException
      */
     public function putFile($local, $name);
 
@@ -65,7 +65,7 @@ interface StorageServiceInterface
      * @param string $name
      *
      * @return bool
-     * @throws StorageServiceException
+     * @throws StorageException
      */
     public function getFile($local, $name);
 
@@ -73,7 +73,7 @@ interface StorageServiceInterface
      * @param string $name Relative path
      *
      * @return bool
-     * @throws StorageServiceException
+     * @throws StorageException
      */
     public function deleteFile($name);
 

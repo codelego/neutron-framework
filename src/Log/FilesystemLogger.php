@@ -2,14 +2,9 @@
 
 namespace Phpfox\Kernel\Log;
 
-/**
- * Class FilesystemWriter
- *
- * @package Phpfox\Kernel\Log
- */
 class FilesystemLogger implements LoggerInterface
 {
-    use LoggerTrait;
+    use StorageTrait;
 
     /**
      * @var string

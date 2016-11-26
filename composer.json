@@ -1,5 +1,5 @@
 {
-  "name": "codelego/phpfox",
+  "name": "codelego/phpfox-kernel",
   "description": "Phpfox framework.",
   "type": "library",
   "license": "MIT",

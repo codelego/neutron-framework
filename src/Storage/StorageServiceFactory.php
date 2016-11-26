@@ -3,7 +3,7 @@
 namespace Phpfox\Kernel\Storage;
 
 
-class StorageServiceFactory implements StorageServiceFactoryInterface
+class StorageServiceFactory
 {
     public function factory($options)
     {
